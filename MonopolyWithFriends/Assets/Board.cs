@@ -7,6 +7,7 @@ public class Board : MonoBehaviour
     public static readonly float SIZE_Y = 1;
     public static readonly float SIZE_X = 0.7f;
 
+    public GameObject tiles;
     public GameObject underBoard;
     public GameObject OverBoard;
 
@@ -39,7 +40,7 @@ public class Board : MonoBehaviour
             GameObject newTile = Instantiate(board[i].prefab);
             newTile.transform.name = board[i].name;
             newTile.transform.position = curPos;
-            newTile.transform.parent = gameObject.transform;
+            newTile.transform.parent = tiles.transform;
             newTile.transform.rotation = Quaternion.Euler(0f,angle,0f);
             
 
